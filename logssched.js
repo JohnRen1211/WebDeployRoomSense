@@ -26,8 +26,9 @@
 
       if (!originalRes.ok || !manualRes.ok) throw new Error("Failed to load schedule data.");
 
-      originalData = await originalRes.json();
-      manualData = await manualRes.json();
+      originalData = (await originalRes.json()).map(item => ({ ...item, source: 'original' }));
+      manualData = (await manualRes.json()).map(item => ({ ...item, source: 'manual' }));
+      
 
   populateFilters([...originalData, ...manualData]);
   const combinedSorted = [...originalData, ...manualData].sort((a, b) => {
@@ -145,9 +146,28 @@ function renderSchedule(schedules) {
       <tbody>
         ${schedules.map(schedule => {
           const date = schedule.date ? new Date(schedule.date).toLocaleDateString() : '-';
-          const startTime = schedule.start_time ? new Date(schedule.start_time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true }) : '-';
-          const endTime = schedule.end_time ? new Date(schedule.end_time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true }) : '-';
-          const time = startTime && endTime ? `${startTime} - ${endTime}` : '-';
+
+
+let startTime = '-';
+let endTime = '-';
+
+if (schedule.start_time && schedule.end_time) {
+  let start = new Date(schedule.start_time);
+  let end = new Date(schedule.end_time);
+
+  // Subtract 8 hours only for Room 315 AND if it's from manual schedule
+  if (schedule.room === '315' && schedule.source === 'manual') {
+    start.setHours(start.getHours() - 8);
+    end.setHours(end.getHours() - 8);
+  }
+
+  startTime = start.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
+  endTime = end.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
+}
+
+const time = startTime && endTime ? `${startTime} - ${endTime}` : '-';
+
+
 
           // Time In and Time Out will be null initially
           const timeIn = 'null'; // Placeholder for Time In (initially null)

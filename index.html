@@ -298,7 +298,7 @@ onclick="leaveRoom()" disabled> Leave Room </button>
 							</div>
 						</div>
 						<!-- Start and End Time Dropdowns -->
-						<div class="flex gap-4 mb-2">
+						<div class="flex gap-4 mb-2" id="time-fields-container">
 							<div class="w-1/2">
 								<label class="font-semibold text-gray-700">Start Time:</label>
 								<select id="startTime" class="w-full p-2 border rounded" required>
@@ -350,15 +350,81 @@ onclick="leaveRoom()" disabled> Leave Room </button>
 						</div>
 						<label class="font-semibold text-gray-700">Select Subject:</label>
 						<select id="subject" class="w-full mb-2 p-2 border rounded" required>
-							<option value="Computer">Computer</option>
-							<option value="CAD">CAD</option>
-							<option value="P.E.">P.E.</option>
+              <option value="" selected disabled>Select subject...</option>
+              <option value="CMPE 011 - Computer Programming">CMPE 011 - Computer Programming</option>
+              <option value="CMPE 012 - Computer Programming">CMPE 012 - Computer Programming</option>
+              <option value="CMPE 014 - Microprocessor">CMPE 014 - Microprocessor</option>
+              <option value="CMPE 103 - Object Oriented Programming">CMPE 103 - Object Oriented Programming </option>
+              <option value="CMPE 104 - Discrete Mathematics">CMPE 104 - Discrete Mathematics</option>
+              <option value="CMPE 105 - Computer Hardware">CMPE 105 - Computer Hardware</option>
+              <option value="CMPE 202 - Operating Systems">CMPE 202 - Operating Systems</option>
+              <option value="CMPE 203 - Numerical Methods">CMPE 203 - Numerical Methods</option>
+              <option value="CMPE 204 - Advanced Mathemathics">CMPE 204 - Advanced Mathemathics</option>
+              <option value="CMPE 30063 - Numerical Methods">CMPE 30063 - Numerical Methods</option>
+              <option value="CMPE 30141 - CPE Drafting and Design">CMPE 30141 - CPE Drafting and Design</option>
+              <option value="CMPE 30174 - Computer Networks">CMPE 30174 - Computer Networks</option>
+              <option value="CMPE 30184 - Microprocessor">CMPE 30184 - Microprocessor</option>
+              <option value="CMPE 30224 - Computer Architecture">CMPE 30224 - Computer Architecture</option>
+              <option value="CMPE 30244 - Digital Signal Processing">CMPE 30244 - Digital Signal Processing</option>
+              <option value="CMPE 30274 - Embedded Systems">CMPE 30274 - Embedded Systems</option>
+              <option value="CMPE 30283 - Emerging Technology">CMPE 30283 - Emerging Technology</option>
+              <option value="CMPE 307 - Occupational Health and Safety">CMPE 307 - Occupational Health and Safety</option>         
+              <option value="CMPE 308 - CPE Laws">CMPE 308 - CPE Laws</option>
+              <option value="CMPE 309 - Feedback and Control Systems">CMPE 309 - Feedback and Control Systems</option>
+              <option value="CMPE 310 - Computer Networks">CMPE 310 - Computer Networks</option>
+              <option value="CMPE 311 - Microprocessor">CMPE 311 - Microprocessor</option>
+              <option value="CMPE 312 - Methods of Research">CMPE 312 - Methods of Research</option>
+              <option value="CMPE 361 - Enterprise Networking">CMPE 361 - Enterprise Networking</option>
+              <option value="CMPE 362 - Pattern Recognition">CMPE 362 - Pattern Recognition</option>
+              <option value="CMPE 363 - Big Data Analytics">CMPE 363 - Big Data Analytics</option>
+              <option value="CMPE 364 - Web and Mobile System">CMPE 364 Web and Mobile System</option>
+              <option value="CMPE 40103 - Cloud Computing">CMPE 40103 - Cloud Computing</option>
+              <option value="CMPE 40183 - Secure Data Management">CMPE 40183 - Secure Data Management</option>
+              <option value="CMPE 40193 - Enterprise Software Systems">CMPE 40193 - Enterprise Software Systems</option>
+              <option value="CMPE 40213 - Software Process">CMPE 40213 - Software Process</option>
+              <option value="CMPE 40223 - Trends in Software Development Processes">CMPE 40223 - Trends in Software Development Processes</option>
+              <option value="CMPE 40413 - Neural Networks">CMPE 40413 - Neural Networks</option>
+              <option value="ECEN 011 - Electronic Circuits">ECEN 011 - Electronic Circuits</option>
+              <option value="ENSC 121 - Computer Aided Drafting">ENSC 121 - Computer Aided Drafting</option>
+              <option value="ENSC 411 - Techno 101">ENSC 411 - Techno 101</option>
+              <option value="MATH 103 - Calculus 2">MATH 103 - Calculus 2</option>
+              <option value="PHYS 013 - Physics For Engineers">PHYS 013 - Physics For Engineers</option>         
+              <option value="STAT 012 - Engineering Data Analysis">STAT 012 - Engineering Data Analysis</option>
+              <option value="STAT 20023 - Engineering Data Analysis">STAT 20023 - Engineering Data Analysis</option>
 						</select>
 						<label class="font-semibold text-gray-700">Select Instructor:</label>
 						<select id="prof" class="w-full mb-2 p-2 border rounded" onchange="toggleCustomProf()" required>
-							<option value="Engr. John">Engr. John</option>
-							<option value="Rolito">Rolito</option>
-							<option value="Engr. Jorly">Engr. Jorly</option>
+              <option value="" selected disabled>Select professor...</option>
+              <option value="John">Engr. John</option>
+              <option value="Dr. Remedios G. Ado">Dr. Remedios G. Ado</option>
+              <option value="Engr. Rolito L. Mahaguay">Engr. Rolito L. Mahaguay</option>
+              <option value="Engr. Joshua Benjamin B. Rodriguez">Engr. Joshua Benjamin B. Rodriguez</option>
+              <option value="Engr. Jake A. Binuya">Engr. Jake A. Binuya</option>
+              <option value="Engr. Julius S. Cansino">Engr. Julius S. Cansino</option>
+              <option value="Dr. Cherry D. Casuat">Dr. Cherry D. Casuat</option>
+              <option value="Engr. Arlene B. Canlas">Engr. Arlene B. Canlas</option>
+              <option value="Dr. Arvin R. De La Cruz">Dr. Arvin R. De La Cruz</option>
+              <option value="Engr. Ronald Fernando">Engr. Ronald Fernando</option>
+              <option value="Dr. Luisito L. Lacatan">Dr. Luisito L. Lacatan</option>
+              <option value="Engr. Jonathan C. Manarang">Engr. Jonathan C. Manarang</option>
+              <option value="Engr. Ferdinand O. Natividad">Engr. Ferdinand O. Natividad</option>
+              <option value="Engr. Florinda H. Oquindo">Engr. Florinda H. Oquindo</option>
+              <option value="Engr. Orlando V. Pajabera">Engr. Orlando V. Pajabera</option>
+              <option value="Dr. Lutzer U. Reyes">Dr. Lutzer U. Reyes</option>
+              <option value="Engr. Kim Joshua G. Tancinco">Engr. Kim Joshua G. Tancinco</option>
+              <option value="Engr. Pedrito M. Tenerife jr.">Engr. Pedrito M. Tenerife jr.</option>
+              <option value="Engr. Edcel B. Artificio">Engr. Edcel B. Artificio</option>
+              <option value="Engr. Godofredo T. Avena">Engr. Godofredo T. Avena</option>
+              <option value="Engr. John Paul S. Avila">Engr. John Paul S. Avila</option>
+              <option value="Engr. Marlon Jhon B. Bautista">Engr. Marlon Jhon B. Bautista</option>
+              <option value="Engr. John R. Dela Cruz">Engr. John R. Dela Cruz</option>
+              <option value="Engr. Ma. Leona S. Khan">Engr. Ma. Leona S. Khan</option>
+              <option value="Engr. Mary Ann V. Legarda">Engr. Mary Ann V. Legarda</option>
+              <option value="Engr. Julian L. Lorico jr.">Engr. Julian L. Lorico jr.</option>
+              <option value="Engr. Danilo Madrigalejos jr.">Engr. Danilo Madrigalejos jr.</option>
+              <option value="Engr. Adelino T. Racusa">Engr. Adelino T. Racusa</option>
+              <option value="Engr. Jerico Sarcillo">Engr. Jerico Sarcillo</option>
+              <option value="Engr. Jan Reuelle P. Teña">Engr. Jan Reuelle P. Teña</option>
 							<option value="Others">Others</option>
 							<!-- Added option -->
 						</select>
@@ -366,9 +432,14 @@ onclick="leaveRoom()" disabled> Leave Room </button>
 
         <label class="font-semibold text-gray-700">Select Representative:</label>
         <select id="representative" class="w-full mb-2 p-2 border rounded" onchange="toggleCustomRepresentative()" required>
-            <option value="Engr. John">Engr. John</option>
-            <option value="Rolito">Rolito</option>
-            <option value="Engr. Jorly">Engr. Jorly</option>
+          <option value="" selected disabled>Select Representative...</option>
+            <option value="Hydee Palisoc">Hydee Palisoc</option>
+            <option value="Nicole Enriquez">Nicole Enriquez</option>
+            <option value="Juan">Juan</option>
+            <option value="John">John Rengel Jaylo</option>
+            <option value="Reiven Cabate">Reiven Cabate</option>
+            <option value="Ronan Valle">Ronan Valle</option>
+            <option value="Jay Andrey Amulong">Jay Amulong</option>
             <option value="Others">Others</option>
             <!-- Added option -->
         </select>
@@ -831,40 +902,54 @@ function editSchedule(schedule) {
 // Save schedule (both for add and edit)
 // Edit schedule details section
 
+// Save schedule (both for add and edit)
 async function saveSchedule(event) {
     event?.preventDefault?.();
     
     // Get values from the form
     let room = document.getElementById("room").value.trim();
-    let date = document.getElementById("date").value.trim(); // Accept date as-is (string)
+    let date = document.getElementById("date").value.trim();
     let academicYear = document.getElementById("academicYear").value.trim();
     let semester = document.getElementById("semester").value.trim();
-    let startTime = document.getElementById("startTime").value.trim();
-    let endTime = document.getElementById("endTime").value.trim();
-
-    // Convert times to ISO string format with time zone information
-    const startDateTime = new Date(`${date}T${startTime}`).toISOString();
-    const endDateTime = new Date(`${date}T${endTime}`).toISOString();
+    
+    // Special handling for Room 315 - no time required
+    let startTime, endTime, startDateTime, endDateTime;
+    if (room === '315') {
+        startTime = endTime = '';
+        startDateTime = endDateTime = null;
+    } else {
+        startTime = document.getElementById("startTime").value.trim();
+        endTime = document.getElementById("endTime").value.trim();
+        // Convert times to ISO string format with time zone information
+        startDateTime = new Date(`${date}T${startTime}`).toISOString();
+        endDateTime = new Date(`${date}T${endTime}`).toISOString();
+    }
 
     // Combine Year Level and Section
     let yearLevel = document.getElementById("yearLevel").value.trim();
     let section = document.getElementById("section").value.trim();
     let combinedSection = `${yearLevel}-${section}`;
 
-//Form others
-let subject = document.getElementById("subject").value.trim();
-let prof = document.getElementById("prof").value.trim();
-if (prof === "Others") {
-  prof = document.getElementById("customProf").value.trim();
-}
-let representative = document.getElementById("representative").value.trim();
-if (representative === "Others") {
-  representative = document.getElementById("customRepresentative").value.trim();
-}
+    // Form others
+    let subject = document.getElementById("subject").value.trim();
+    let prof = document.getElementById("prof").value.trim();
+    if (prof === "Others") {
+        prof = document.getElementById("customProf").value.trim();
+    }
+    let representative = document.getElementById("representative").value.trim();
+    if (representative === "Others") {
+        representative = document.getElementById("customRepresentative").value.trim();
+    }
 
-    // Validation check
-    if (!room || !date || !academicYear || !startTime || !endTime || !semester || !combinedSection || !subject || !prof || !representative) {
-        alert("Please fill in all fields before saving.");
+    // Validation check - different for Room 315
+    if (!room || !date || !academicYear || !semester || !combinedSection || !subject || !prof || !representative) {
+        alert("Please fill in all required fields before saving.");
+        return;
+    }
+    
+    // Additional validation for non-315 rooms
+    if (room !== '315' && (!startTime || !endTime)) {
+        alert("Please fill in start and end times for this room.");
         return;
     }
 
@@ -872,11 +957,11 @@ if (representative === "Others") {
     if (submitButton) submitButton.disabled = true;
 
     try {
-        const isEditing = currentSchedule !== null; // Check if we're editing
-        const method = isEditing ? 'PATCH' : 'POST'; // Use PATCH for editing, POST for creating
+        const isEditing = currentSchedule !== null;
+        const method = isEditing ? 'PATCH' : 'POST';
         const url = isEditing
-            ? `${SUPABASE_URL}/rest/v1/${TABLE_NAME}?id=eq.${currentSchedule.id}` // Update existing schedule
-            : `${SUPABASE_URL}/rest/v1/${TABLE_NAME}`; // Create new schedule
+            ? `${SUPABASE_URL}/rest/v1/${TABLE_NAME}?id=eq.${currentSchedule.id}`
+            : `${SUPABASE_URL}/rest/v1/${TABLE_NAME}`;
 
         const response = await fetch(url, {
             method,
@@ -887,8 +972,12 @@ if (representative === "Others") {
                 'Prefer': 'return=representation'
             },
             body: JSON.stringify({
-                room, date, academicYear, start_time: startDateTime, end_time: endDateTime,
-                section: combinedSection, subject, prof, representative, semester
+                room, date, academicYear, 
+                start_time: startDateTime, 
+                end_time: endDateTime,
+                section: combinedSection, 
+                subject, prof, representative, 
+                semester
             })
         });
 
@@ -896,7 +985,8 @@ if (representative === "Others") {
 
         alert(isEditing ? "Schedule updated!" : "Schedule saved!");
         closeModal();
-        currentSchedule = null; // Reset currentSchedule after saving or updating
+        currentSchedule = null;
+        updateRoomStatus(room); // Refresh the room view
 
     } catch (err) {
         console.error("Save error:", err.message);
@@ -1017,16 +1107,22 @@ if (representative === "Others") {
 
       // Open modal for adding schedule, sets selected room
       function openModalForAddSchedule() {
-        if (!currentRoom) {
-          alert("Please select a room first.");
-          return;
-        }
-        document.getElementById("modal").classList.remove("hidden");
-
-        // Set room input value in modal and make it readonly
-        document.getElementById("room").value = currentRoom;
-      }
-
+    if (!currentRoom) {
+        alert("Please select a room first.");
+        return;
+    }
+    
+    document.getElementById("modal").classList.remove("hidden");
+    document.getElementById("room").value = currentRoom;
+    
+    // Hide time fields for Room 315
+    const timeFields = document.getElementById("time-fields-container"); // You'll need to add this container in your HTML
+    if (currentRoom === '315') {
+        timeFields.classList.add("hidden");
+    } else {
+        timeFields.classList.remove("hidden");
+    }
+}
       function closeModal() {
         document.getElementById("modal").classList.add("hidden");
         document.getElementById("scheduleForm").reset();

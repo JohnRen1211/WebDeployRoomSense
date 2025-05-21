@@ -1,0 +1,85 @@
+Chat edit this open modal to function like the one below whehre it diable the time field for room 315 only and send "" value:
+function openModalForAddSchedule() {
+    if (!currentRoom) {
+        alert("Please select a room first.");
+        return;
+    }
+    document.getElementById("modal").classList.remove("hidden");
+    
+    // Set room input value in modal
+    document.getElementById("room").value = currentRoom;
+    
+    // Call the function to handle time fields based on room
+    toggleTimeFieldsBasedOnRoom();
+}
+
+
+To function like this make the start and end time null and sent it null to database:
+function openModal(mode = 'Add') {
+    document.getElementById("modal").classList.remove("hidden");
+
+    if (mode === 'Add') {
+        currentSchedule = null;
+        document.getElementById("scheduleForm").reset(); // Only reset on Add
+    }
+    //Time disable click
+document.getElementById('room').addEventListener('change', function () {
+const isRoom315 = this.value === '315';
+const startTime = document.getElementById('startTime');
+const endTime = document.getElementById('endTime');
+
+startTime.disabled = isRoom315;
+endTime.disabled = isRoom315;
+
+if (isRoom315) {
+  startTime.value = "";
+  endTime.value = "";
+}
+}
+);
+}
+
+
+Chat isntead of hidding the time can you make it just disable like the one below:
+function openModalForAddSchedule() {
+    if (!currentRoom) {
+        alert("Please select a room first.");
+        return;
+    }
+    
+    document.getElementById("modal").classList.remove("hidden");
+    document.getElementById("room").value = currentRoom;
+    
+    // Hide time fields for Room 315
+    const timeFields = document.getElementById("time-fields-container"); // You'll need to add this container in your HTML
+    if (currentRoom === '315') {
+        timeFields.classList.add("hidden");
+    } else {
+        timeFields.classList.remove("hidden");
+    }
+}
+
+Like this:
+function openModal(mode = 'Add') {
+    document.getElementById("modal").classList.remove("hidden");
+
+    if (mode === 'Add') {
+        currentSchedule = null;
+        document.getElementById("scheduleForm").reset(); // Only reset on Add
+    }
+    //Time disable click
+document.getElementById('room').addEventListener('change', function () {
+const isRoom315 = this.value === '315';
+const startTime = document.getElementById('startTime');
+const endTime = document.getElementById('endTime');
+
+startTime.disabled = isRoom315;
+endTime.disabled = isRoom315;
+
+if (isRoom315) {
+  startTime.value = "";
+  endTime.value = "";
+}
+}
+);
+}
